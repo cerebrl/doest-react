@@ -9,7 +9,7 @@
  */
 
 import { v4 as uuid } from 'uuid';
-import { auth } from './server.middleware.mjs';
+import { auth } from './middleware.mjs';
 
 const todos = [
   {

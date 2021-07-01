@@ -25,7 +25,7 @@ export default function Home() {
   const title = state.authenticated ? 'Hello, again!' : 'Hello, visitor!';
   const message = state.authenticated ? (
     <p>
-      Welcome back! Manage <a href="/todos">your success here</a>.
+      Welcome back! Manage <a href="/todos">your success here</a>. Or, <a href="https://api.doest.test:9443/sso/a">login to Doest A</a>!
     </p>
   ) : (
     <p>

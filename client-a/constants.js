@@ -8,8 +8,17 @@
  * of the MIT license. See the LICENSE file for details.
  */
 
-export const AM_URL = 'https://openam-crbrl-01.forgeblocks.com/am/';
+export const AM_URL = 'https://api.doest.local:9443';
 export const APP_URL = 'https://react.doest.local:8443';
 export const API_URL = 'https://api.doest.local:9443';
+export const PATHS = {
+  authenticate: 'auth/authenticate',
+  authorize: 'auth/authorize',
+  accessToken: 'auth/tokenExchange',
+  endSession: 'auth/endSession',
+  userInfo: 'auth/userInfo',
+  revoke: 'auth/revoke',
+  sessions: 'auth/sessions',
+};
 export const REALM_PATH = 'alpha';
 export const SESSION_URL = `${AM_URL}json/realms/root/sessions`;

@@ -1,0 +1,14 @@
+$container-max-widths: (
+  sm: 540px,
+  md: 540px,
+  lg: 540px,
+  xl: 540px,
+  xxl: 540px
+);
+
+// Floating label for new todo input
+.todos-input-new{
+  > label {
+    opacity: .50;
+  }
+}

@@ -10,8 +10,8 @@
 
 import request from 'superagent';
 
-import { key, cert } from './server.certs.mjs';
-import { AM_URL, CONFIDENTIAL_CLIENT, REALM_PATH } from './server.constants.mjs';
+import { key, cert } from './certs.mjs';
+import { AM_URL, CONFIDENTIAL_CLIENT, REALM_PATH } from './constants.mjs';
 
 /**
  * @function auth - Auth middleware for checking the validity of user's auth

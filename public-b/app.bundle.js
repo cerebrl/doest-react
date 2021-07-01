@@ -5589,7 +5589,7 @@ var TokenManager = /** @class */ (function () {
      * Supports both embedded authentication as well as external authentication via redirects
      *
      Example 1:
-  
+
      ```js
      const tokens = forgerock.TokenManager.getTokens({
        forceRenew: true, // If you want to get new tokens, despite existing ones
@@ -5600,9 +5600,9 @@ var TokenManager = /** @class */ (function () {
        },
      });
      ```
-  
+
      Example 2:
-  
+
      ```js
      const tokens = forgerock.TokenManager.getTokens({
        forceRenew: false, // Will immediately return stored tokens, if they exist
@@ -5610,9 +5610,9 @@ var TokenManager = /** @class */ (function () {
        support: 'modern', // Set globally or locally; `"modern"` will use native fetch
      });
      ```
-  
+
      Example 3:
-  
+
      ```js
      const tokens = forgerock.TokenManager.getTokens({
        query: {
@@ -5734,7 +5734,7 @@ var TokenManager = /** @class */ (function () {
                         window.sessionStorage.setItem(clientId, JSON.stringify(authorizeUrlOptions));
                         return [2 /*return*/, window.location.assign(authorizeUrl)];
                     case 19: return [4 /*yield*/, this.tokenExchange(options, { state: state, verifier: verifier })];
-                    case 20: 
+                    case 20:
                     /**
                      * Exchange authorization code for tokens
                      */
@@ -5933,11 +5933,11 @@ var TokenStorage = /** @class */ (function () {
                     case 6:
                         if (!(tokenStore && tokenStore.get)) return [3 /*break*/, 8];
                         return [4 /*yield*/, tokenStore.get(clientId)];
-                    case 7: 
+                    case 7:
                     // User supplied token store
                     return [2 /*return*/, _b.sent()];
                     case 8: return [4 /*yield*/, _indexed_db__WEBPACK_IMPORTED_MODULE_1__.default.get(clientId)];
-                    case 9: 
+                    case 9:
                     // if tokenStore is undefined, default to previous behavior
                     return [2 /*return*/, _b.sent()];
                 }
@@ -5968,11 +5968,11 @@ var TokenStorage = /** @class */ (function () {
                     case 6:
                         if (!(tokenStore && tokenStore.set)) return [3 /*break*/, 8];
                         return [4 /*yield*/, tokenStore.set(clientId, tokens)];
-                    case 7: 
+                    case 7:
                     // User supplied token store
                     return [2 /*return*/, _b.sent()];
                     case 8: return [4 /*yield*/, _indexed_db__WEBPACK_IMPORTED_MODULE_1__.default.set(clientId, tokens)];
-                    case 9: 
+                    case 9:
                     // if tokenStore is undefined, default to previous behavior
                     return [2 /*return*/, _b.sent()];
                 }
@@ -6003,11 +6003,11 @@ var TokenStorage = /** @class */ (function () {
                     case 6:
                         if (!(tokenStore && tokenStore.remove)) return [3 /*break*/, 8];
                         return [4 /*yield*/, tokenStore.remove(clientId)];
-                    case 7: 
+                    case 7:
                     // User supplied token store
                     return [2 /*return*/, _b.sent()];
                     case 8: return [4 /*yield*/, _indexed_db__WEBPACK_IMPORTED_MODULE_1__.default.remove(clientId)];
-                    case 9: 
+                    case 9:
                     // if tokenStore is undefined, default to previous behavior
                     return [2 /*return*/, _b.sent()];
                 }
@@ -7068,7 +7068,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ App)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _views_todos_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./views/todos.js */ "./client/views/todos.js");
+/* harmony import */ var _views_catalog_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./views/catalog.js */ "./client/views/catalog.js");
 /* harmony import */ var _components_header_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/header.js */ "./client/components/header.js");
 /* harmony import */ var _views_home_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./views/home.js */ "./client/views/home.js");
 /* harmony import */ var _views_login_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./views/login.js */ "./client/views/login.js");
@@ -7104,8 +7104,8 @@ function App() {
       Main = _views_home_js__WEBPACK_IMPORTED_MODULE_3__.default;
       break;
 
-    case 'todos':
-      Main = _views_todos_js__WEBPACK_IMPORTED_MODULE_1__.default;
+    case 'catalog':
+      Main = _views_catalog_js__WEBPACK_IMPORTED_MODULE_1__.default;
       break;
 
     case 'login':
@@ -7117,165 +7117,20 @@ function App() {
   }
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_header_js__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Main, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_footer_js__WEBPACK_IMPORTED_MODULE_5__.default, null));
-}
-
-/***/ }),
-
-/***/ "./client/components/footer.js":
-/*!*************************************!*\
-  !*** ./client/components/footer.js ***!
-  \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Footer)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/*
- * doest-react
- *
- * footer.js
- *
- * Copyright (c) 2021 ForgeRock. All rights reserved.
- * This software may be modified and distributed under the terms
- * of the MIT license. See the LICENSE file for details.
- */
-
-/**
- * @function Footer - React footer view
- * @returns {Object} - React JSX view
- */
-
-function Footer() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("footer", {
-    id: "footer"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "container-sm"
-  }));
-}
-;
-
-/***/ }),
-
-/***/ "./client/components/header.js":
-/*!*************************************!*\
-  !*** ./client/components/header.js ***!
-  \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Header)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _state_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../state.js */ "./client/state.js");
-/*
- * doest-react
- *
- * header.js
- *
- * Copyright (c) 2020 ForgeRock. All rights reserved.
- * This software may be modified and distributed under the terms
- * of the MIT license. See the LICENSE file for details.
- */
-
-
-/**
- * @function Header - Header React view
- * @returns {Object} - React JSX view
- */
-
-function Header() {
-  /**
-   * Collects the global state for detecting user auth for rendering
-   * appropriate navigational items.
-   */
-  var [state] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_state_js__WEBPACK_IMPORTED_MODULE_1__.AppContext);
-  var TodosItem;
-  var LoginOrOutItem;
-  /**
-   * Render different navigational items depending on authenticated status
-   */
-
-  switch (state.authenticated) {
-    case true:
-      TodosItem = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
-        className: "nav-item"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
-        className: "nav-link ".concat(state.page === 'todos' ? 'active' : ''),
-        href: "/todos"
-      }, "Todos"));
-      LoginOrOutItem = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        className: "d-flex"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
-        className: "btn btn-outline-primary",
-        href: "/logout"
-      }, "Logout"));
-      break;
-
-    default:
-      TodosItem = null;
-      LoginOrOutItem = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        className: "d-flex"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
-        className: "btn btn-outline-primary",
-        href: "/login"
-      }, "Login"));
-  }
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("nav", {
-    className: "navbar navbar-expand-lg navbar-light bg-light"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
+    id: "content"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
-    className: "navbar-brand",
-    href: "/",
-    style: {
-      height: '40px',
-      width: '38px'
-    }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: "/img/doest-icon.png",
-    alt: "Doest Icon",
-    width: "50px",
-    style: {
-      marginTop: '-32px'
-    }
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
-    className: "navbar-toggler",
-    type: "button",
-    "data-bs-toggle": "collapse",
-    "data-bs-target": "#navbarNav",
-    "aria-controls": "navbarNav",
-    "aria-expanded": "false",
-    "aria-label": "Toggle navigation"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    className: "navbar-toggler-icon"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "collapse navbar-collapse",
-    id: "navbarNav"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
-    className: "navbar-nav me-auto"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
-    className: "nav-item"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
-    className: "nav-link ".concat(state.page === 'home' ? 'active' : ''),
-    "aria-current": "page",
-    href: "/"
-  }, "Home")), TodosItem), LoginOrOutItem)));
+    className: "featured_slider"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Main, null)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_footer_js__WEBPACK_IMPORTED_MODULE_5__.default, null));
 }
 
 /***/ }),
 
-/***/ "./client/components/login/choice.js":
-/*!*******************************************!*\
-  !*** ./client/components/login/choice.js ***!
-  \*******************************************/
+/***/ "./client/components/choice.js":
+/*!*************************************!*\
+  !*** ./client/components/choice.js ***!
+  \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -7332,10 +7187,10 @@ function Choice(props) {
 
 /***/ }),
 
-/***/ "./client/components/login/device-profile.js":
-/*!***************************************************!*\
-  !*** ./client/components/login/device-profile.js ***!
-  \***************************************************/
+/***/ "./client/components/device-profile.js":
+/*!*********************************************!*\
+  !*** ./client/components/device-profile.js ***!
+  \*********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -7424,10 +7279,216 @@ function DeviceProfile(props) {
 
 /***/ }),
 
-/***/ "./client/components/login/password.js":
-/*!*********************************************!*\
-  !*** ./client/components/login/password.js ***!
-  \*********************************************/
+/***/ "./client/components/footer.js":
+/*!*************************************!*\
+  !*** ./client/components/footer.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Footer)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/*
+ * doest-react
+ *
+ * footer.js
+ *
+ * Copyright (c) 2021 ForgeRock. All rights reserved.
+ * This software may be modified and distributed under the terms
+ * of the MIT license. See the LICENSE file for details.
+ */
+
+/**
+ * @function Footer - React footer view
+ * @returns {Object} - React JSX view
+ */
+
+function Footer() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("footer", {
+    id: "footer"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "footer_top"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "col-lg-3 col-md-3 col-sm3"
+  })))));
+}
+;
+
+/***/ }),
+
+/***/ "./client/components/header.js":
+/*!*************************************!*\
+  !*** ./client/components/header.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Header)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _state_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../state.js */ "./client/state.js");
+/*
+ * doest-react
+ *
+ * header.js
+ *
+ * Copyright (c) 2020 ForgeRock. All rights reserved.
+ * This software may be modified and distributed under the terms
+ * of the MIT license. See the LICENSE file for details.
+ */
+
+
+/**
+ * @function Header - Header React view
+ * @returns {Object} - React JSX view
+ */
+
+function Header() {
+  /**
+   * Collects the global state for detecting user auth for rendering
+   * appropriate navigational items.
+   */
+  var [state] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_state_js__WEBPACK_IMPORTED_MODULE_1__.AppContext);
+  var TodosItem;
+  var LoginOrOutItem;
+  /**
+   * Render different navigational items depending on authenticated status
+   */
+
+  switch (state.authenticated) {
+    case true:
+      TodosItem = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+        class: "nav-item"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+        class: "nav-link active",
+        href: "/todos"
+      }, "Todos"));
+      LoginOrOutItem = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+        class: "nav-item"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+        class: "nav-link active",
+        href: "/logout"
+      }, "Logout"));
+      break;
+
+    default:
+      TodosItem = null;
+      LoginOrOutItem = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+        class: "nav-item"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+        class: "nav-link",
+        href: "/login"
+      }, "Login"));
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("nav", {
+    class: "navbar navbar-expand-lg navbar-light bg-light"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    class: "container-sm"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+    class: "navbar-brand",
+    href: "#"
+  }, "Doest"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    class: "navbar-toggler",
+    type: "button",
+    "data-bs-toggle": "collapse",
+    "data-bs-target": "#navbarNav",
+    "aria-controls": "navbarNav",
+    "aria-expanded": "false",
+    "aria-label": "Toggle navigation"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+    class: "navbar-toggler-icon"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    class: "collapse navbar-collapse",
+    id: "navbarNav"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
+    class: "navbar-nav"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+    class: "nav-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+    class: "nav-link active",
+    "aria-current": "page",
+    href: "/"
+  }, "Home")), TodosItem, LoginOrOutItem))));
+}
+
+/***/ }),
+
+/***/ "./client/components/movie-card.js":
+/*!*****************************************!*\
+  !*** ./client/components/movie-card.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ MovieCard)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/*
+ * doest-react
+ *
+ * movie-card.js
+ *
+ * Copyright (c) 2021 ForgeRock. All rights reserved.
+ * This software may be modified and distributed under the terms
+ * of the MIT license. See the LICENSE file for details.
+ */
+
+/**
+ * @function MovieCard - Used for display a single movie and its details
+ * @param {Object} props - The object representing React's props
+ * @param {Object} props.movie - The movie object passed from the parent component
+ * @returns {Object} - React JSX view
+ */
+
+function MovieCard(_ref) {
+  var {
+    movie
+  } = _ref;
+  // CSS for the card, this could be moved to a CSS file, if desired
+  var cardStyle = {
+    display: 'inline-block',
+    padding: '2em',
+    width: '33%'
+  };
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+    className: "card",
+    style: cardStyle
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+    alt: "Image from ".concat(movie.Title),
+    className: "card-img-top",
+    src: movie.Images[0],
+    style: {
+      width: '100%'
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "card-body"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
+    className: "card-title"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Title: ", movie.Title)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+    className: "card-text"
+  }, "Genre: ", movie.Genre), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+    className: "btn btn-primary"
+  }, "Watch Movie")));
+}
+
+/***/ }),
+
+/***/ "./client/components/password.js":
+/*!***************************************!*\
+  !*** ./client/components/password.js ***!
+  \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -7466,25 +7527,24 @@ function Password(props) {
   }
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "form-floating mb-3"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    className: "form-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    htmlFor: "passwordInput"
+  }, passwordLabel), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     onBlur: setValue,
     type: "password",
     name: "password",
     className: "form-control",
-    id: "passwordInput",
-    placeholder: passwordLabel
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
-    htmlFor: "passwordInput"
-  }, passwordLabel));
+    id: "passwordInput"
+  }));
 }
 
 /***/ }),
 
-/***/ "./client/components/login/unknown.js":
-/*!********************************************!*\
-  !*** ./client/components/login/unknown.js ***!
-  \********************************************/
+/***/ "./client/components/unknown.js":
+/*!**************************************!*\
+  !*** ./client/components/unknown.js ***!
+  \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -7518,10 +7578,10 @@ function Unknown(props) {
 
 /***/ }),
 
-/***/ "./client/components/login/username-password.js":
-/*!******************************************************!*\
-  !*** ./client/components/login/username-password.js ***!
-  \******************************************************/
+/***/ "./client/components/username-password.js":
+/*!************************************************!*\
+  !*** ./client/components/username-password.js ***!
+  \************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -7599,10 +7659,10 @@ function UsernamePassword(props) {
 
 /***/ }),
 
-/***/ "./client/components/login/username.js":
-/*!*********************************************!*\
-  !*** ./client/components/login/username.js ***!
-  \*********************************************/
+/***/ "./client/components/username.js":
+/*!***************************************!*\
+  !*** ./client/components/username.js ***!
+  \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -7641,99 +7701,17 @@ function Username(props) {
   }
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "form-floating mb-3"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    className: "form-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    htmlFor: "usernameInput"
+  }, usernameLabel), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     onBlur: setValue,
     type: "username",
     name: "username",
     className: "form-control",
     id: "usernameInput",
-    "aria-describedby": "emailHelp",
-    placeholder: usernameLabel
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
-    htmlFor: "usernameInput"
-  }, usernameLabel));
-}
-
-/***/ }),
-
-/***/ "./client/components/todo.js":
-/*!***********************************!*\
-  !*** ./client/components/todo.js ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Todo)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _utilities_request__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utilities/request */ "./client/utilities/request.js");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-/*
- * doest-react
- *
- * todo.js
- *
- * Copyright (c) 2021 ForgeRock. All rights reserved.
- * This software may be modified and distributed under the terms
- * of the MIT license. See the LICENSE file for details.
- */
-
-
-/**
- * @function Todo - Used for display a single todo and its details
- * @param {Object} props - The object representing React's props
- * @param {Object} props.todo - The todo object passed from the parent component
- * @returns {Object} - React JSX view
- */
-
-function Todo(_ref) {
-  var {
-    todo: item
-  } = _ref;
-  var [todo, updateTodo] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(item);
-
-  function toggleTodo(_x) {
-    return _toggleTodo.apply(this, arguments);
-  }
-
-  function _toggleTodo() {
-    _toggleTodo = _asyncToGenerator(function* (id) {
-      yield (0,_utilities_request__WEBPACK_IMPORTED_MODULE_1__.default)("todos/".concat(id), 'POST');
-      updateTodo(_objectSpread(_objectSpread({}, todo), {}, {
-        completed: !todo.completed
-      }));
-      return;
-    });
-    return _toggleTodo.apply(this, arguments);
-  }
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
-    className: "list-group-item"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-    id: todo.id,
-    className: "form-check-input me-2",
-    type: "checkbox",
-    checked: todo.completed,
-    onChange: e => {
-      e.preventDefault();
-      toggleTodo(todo.id);
-    }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
-    htmlFor: todo.id,
-    className: ""
-  }, todo.title));
+    "aria-describedby": "emailHelp"
+  }));
 }
 
 /***/ }),
@@ -7868,6 +7846,71 @@ function _checkAccessToken() {
 
 /***/ }),
 
+/***/ "./client/request.js":
+/*!***************************!*\
+  !*** ./client/request.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ apiRequest)
+/* harmony export */ });
+/* harmony import */ var _forgerock_javascript_sdk__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @forgerock/javascript-sdk */ "./node_modules/@forgerock/javascript-sdk/lib-esm/index.js");
+/* harmony import */ var _constants_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./constants.js */ "./client/constants.js");
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+/*
+ * doest-react
+ *
+ * request.js
+ *
+ * Copyright (c) 2021 ForgeRock. All rights reserved.
+ * This software may be modified and distributed under the terms
+ * of the MIT license. See the LICENSE file for details.
+ */
+
+
+/**
+ * @function request - A convenience function for wrapping around HttpClient
+ * @param {string} resource - the resource path for the API server
+ * @param {string} method - the method (GET, POST, etc) for the API server
+ * @return {Object} - JSON response from API
+ */
+
+function apiRequest(_x, _x2) {
+  return _apiRequest.apply(this, arguments);
+}
+
+function _apiRequest() {
+  _apiRequest = _asyncToGenerator(function* (resource, method) {
+    var json;
+
+    try {
+      var response = yield _forgerock_javascript_sdk__WEBPACK_IMPORTED_MODULE_0__.HttpClient.request({
+        url: "".concat(_constants_js__WEBPACK_IMPORTED_MODULE_1__.API_URL, "/").concat(resource),
+        init: {
+          credentials: "include",
+          method: method
+        }
+      });
+      json = yield response.json();
+    } catch (err) {
+      json = {
+        error: err.message
+      };
+    }
+
+    return json;
+  });
+  return _apiRequest.apply(this, arguments);
+}
+
+/***/ }),
+
 /***/ "./client/routes.js":
 /*!**************************!*\
   !*** ./client/routes.js ***!
@@ -7925,28 +7968,31 @@ function initRoutes(setAuthentication, setPage) {
    */
 
   page__WEBPACK_IMPORTED_MODULE_1___default()('/', function initialDisplay(ctx) {
+    console.log('In: home');
     ctx.setPage('home');
   });
   /**
    * Protected catalog route (via the checkSession middleware)
    */
 
-  page__WEBPACK_IMPORTED_MODULE_1___default()('/todos', _middleware_js__WEBPACK_IMPORTED_MODULE_2__.checkAccessToken, /*#__PURE__*/function () {
-    var _todos = _asyncToGenerator(function* (ctx) {
-      ctx.setPage('todos');
+  page__WEBPACK_IMPORTED_MODULE_1___default()('/catalog', _middleware_js__WEBPACK_IMPORTED_MODULE_2__.checkAccessToken, /*#__PURE__*/function () {
+    var _catalog = _asyncToGenerator(function* (ctx) {
+      console.log('In: catalog');
+      ctx.setPage('catalog');
     });
 
-    function todos(_x) {
-      return _todos.apply(this, arguments);
+    function catalog(_x) {
+      return _catalog.apply(this, arguments);
     }
 
-    return todos;
+    return catalog;
   }());
   /**
    * Handles the login route
    */
 
   page__WEBPACK_IMPORTED_MODULE_1___default()('/login', function login(ctx) {
+    console.log('In: login');
     ctx.setPage('login');
   });
   /**
@@ -7956,6 +8002,8 @@ function initRoutes(setAuthentication, setPage) {
 
   page__WEBPACK_IMPORTED_MODULE_1___default()('/logout', /*#__PURE__*/function () {
     var _logout = _asyncToGenerator(function* (ctx) {
+      console.log('In: logout');
+
       try {
         yield _forgerock_javascript_sdk__WEBPACK_IMPORTED_MODULE_0__.FRUser.logout();
         ctx.setAuthentication(false);
@@ -7980,7 +8028,7 @@ function initRoutes(setAuthentication, setPage) {
    */
 
   page__WEBPACK_IMPORTED_MODULE_1___default()({
-    dispatch: true,
+    dispatch: false,
     hashbang: false
   });
 }
@@ -8067,19 +8115,20 @@ var AppContext = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createContext([
 
 /***/ }),
 
-/***/ "./client/utilities/request.js":
-/*!*************************************!*\
-  !*** ./client/utilities/request.js ***!
-  \*************************************/
+/***/ "./client/views/catalog.js":
+/*!*********************************!*\
+  !*** ./client/views/catalog.js ***!
+  \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ apiRequest)
+/* harmony export */   "default": () => (/* binding */ Catalog)
 /* harmony export */ });
-/* harmony import */ var _forgerock_javascript_sdk__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @forgerock/javascript-sdk */ "./node_modules/@forgerock/javascript-sdk/lib-esm/index.js");
-/* harmony import */ var _constants_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants.js */ "./client/constants.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _components_movie_card_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/movie-card.js */ "./client/components/movie-card.js");
+/* harmony import */ var _request_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../request.js */ "./client/request.js");
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
@@ -8087,7 +8136,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 /*
  * doest-react
  *
- * request.js
+ * catalog.js
  *
  * Copyright (c) 2021 ForgeRock. All rights reserved.
  * This software may be modified and distributed under the terms
@@ -8095,43 +8144,54 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
  */
 
 
+
 /**
- * @function request - A convenience function for wrapping around HttpClient
- * @param {string} resource - the resource path for the API server
- * @param {string} method - the method (GET, POST, etc) for the API server
- * @return {Object} - JSON response from API
+ * @function Catalog - React view component for retrieving and displaying movies
+ * @returns {Object} - React JSX view
  */
 
-function apiRequest(_x, _x2, _x3) {
-  return _apiRequest.apply(this, arguments);
-}
+function Catalog() {
+  /**
+   * Use local, component state for movies. Though, this could be moved to
+   * the global state if that's prefered over doing API calls in React views
+   */
+  var [movies, setMovies] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
+  var Movies = !movies.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Loading movie catalog ...") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, movies.map(function (movie) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_movie_card_js__WEBPACK_IMPORTED_MODULE_1__.default, {
+      key: movie.imdbID,
+      movie: movie
+    });
+  }));
+  /**
+   * Since we are making an API call, which is a side-effect,
+   * we will wrap this in a useEffect, which will rerender the
+   * view once the API request returns.
+   */
 
-function _apiRequest() {
-  _apiRequest = _asyncToGenerator(function* (resource, method, data) {
-    var json;
-
-    try {
-      var response = yield _forgerock_javascript_sdk__WEBPACK_IMPORTED_MODULE_0__.HttpClient.request({
-        url: "".concat(_constants_js__WEBPACK_IMPORTED_MODULE_1__.API_URL, "/").concat(resource),
-        init: {
-          credentials: "include",
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          method: method,
-          body: JSON.stringify(data)
-        }
-      });
-      json = yield response.json();
-    } catch (err) {
-      json = {
-        error: err.message
-      };
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    function getMovies() {
+      return _getMovies.apply(this, arguments);
     }
 
-    return json;
-  });
-  return _apiRequest.apply(this, arguments);
+    function _getMovies() {
+      _getMovies = _asyncToGenerator(function* () {
+        // Request the movie catalog from our resource API
+        var movies = yield (0,_request_js__WEBPACK_IMPORTED_MODULE_2__.default)('todos', 'GET');
+        setMovies(movies);
+      });
+      return _getMovies.apply(this, arguments);
+    }
+
+    if (!movies.length) {
+      getMovies();
+    }
+  }, []);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
+    id: "page_header",
+    className: "featured_title"
+  }, "Enjoy our selection of movies"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    id: "page_body"
+  }, Movies));
 }
 
 /***/ }),
@@ -8174,12 +8234,15 @@ function Home() {
   var title = state.authenticated ? 'Hello, again!' : 'Hello, visitor!';
   var message = state.authenticated ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Welcome back! Manage ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
     href: "/todos"
-  }, "your success here"), ".") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+  }, "your todos here.")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
     href: "/login"
-  }, "Login"), " or register to get things done!");
+  }, "Login"), " or register to watch some amazing content!!");
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
-    className: "mt-4 mb-3"
-  }, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, message));
+    id: "page_header",
+    className: "featured_title"
+  }, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    id: "page_body"
+  }, message));
 }
 
 /***/ }),
@@ -8199,12 +8262,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! page */ "./node_modules/page/page.js");
 /* harmony import */ var page__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(page__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _components_login_choice_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/login/choice.js */ "./client/components/login/choice.js");
-/* harmony import */ var _components_login_device_profile_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/login/device-profile.js */ "./client/components/login/device-profile.js");
-/* harmony import */ var _components_login_password_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/login/password.js */ "./client/components/login/password.js");
-/* harmony import */ var _components_login_unknown_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/login/unknown.js */ "./client/components/login/unknown.js");
-/* harmony import */ var _components_login_username_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/login/username.js */ "./client/components/login/username.js");
-/* harmony import */ var _components_login_username_password_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/login/username-password.js */ "./client/components/login/username-password.js");
+/* harmony import */ var _components_choice_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/choice.js */ "./client/components/choice.js");
+/* harmony import */ var _components_device_profile_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/device-profile.js */ "./client/components/device-profile.js");
+/* harmony import */ var _components_password_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/password.js */ "./client/components/password.js");
+/* harmony import */ var _components_unknown_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/unknown.js */ "./client/components/unknown.js");
+/* harmony import */ var _components_username_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/username.js */ "./client/components/username.js");
+/* harmony import */ var _components_username_password_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/username-password.js */ "./client/components/username-password.js");
 /* harmony import */ var _state_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../state.js */ "./client/state.js");
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -8362,7 +8425,7 @@ function Login() {
      */
     if (step.getStage() === 'UsernamePassword') {
       title = 'Welcome. Please enter your credentials';
-      StageComponent = _components_login_username_password_js__WEBPACK_IMPORTED_MODULE_8__.default;
+      StageComponent = _components_username_password_js__WEBPACK_IMPORTED_MODULE_8__.default;
     } else {
       title = 'Oops, sorry!';
 
@@ -8379,24 +8442,24 @@ function Login() {
     step.callbacks.map(function (callback) {
       switch (callback.getType()) {
         case "ChoiceCallback":
-          StepComponents.push(_components_login_choice_js__WEBPACK_IMPORTED_MODULE_3__.default);
+          StepComponents.push(_components_choice_js__WEBPACK_IMPORTED_MODULE_3__.default);
           break;
 
         case "DeviceProfileCallback":
-          StepComponents.push(_components_login_device_profile_js__WEBPACK_IMPORTED_MODULE_4__.default);
+          StepComponents.push(_components_device_profile_js__WEBPACK_IMPORTED_MODULE_4__.default);
           break;
 
         case "NameCallback":
-          StepComponents.push(_components_login_username_js__WEBPACK_IMPORTED_MODULE_7__.default);
+          StepComponents.push(_components_username_js__WEBPACK_IMPORTED_MODULE_7__.default);
           break;
 
         case "PasswordCallback":
-          StepComponents.push(_components_login_password_js__WEBPACK_IMPORTED_MODULE_5__.default);
+          StepComponents.push(_components_password_js__WEBPACK_IMPORTED_MODULE_5__.default);
           break;
 
         default:
           // If we don't recognize the callback, render a warning
-          StepComponents.push(_components_login_unknown_js__WEBPACK_IMPORTED_MODULE_6__.default);
+          StepComponents.push(_components_unknown_js__WEBPACK_IMPORTED_MODULE_6__.default);
       }
     });
   } else {
@@ -8414,22 +8477,27 @@ function Login() {
 
   if (MessageComponent) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(react__WEBPACK_IMPORTED_MODULE_2__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("h2", {
-      className: "mt-4 mb-3"
+      id: "page_header",
+      className: "featured_title"
     }, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(MessageComponent, {
       step: step,
       action: submitStep
     }));
   } else if (StageComponent) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(react__WEBPACK_IMPORTED_MODULE_2__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("h2", {
-      className: "mt-4 mb-3"
+      id: "page_header",
+      className: "featured_title"
     }, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(StageComponent, {
       step: step,
       action: submitStep
     }));
   } else {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(react__WEBPACK_IMPORTED_MODULE_2__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("h2", {
-      className: "mt-4 mb-3"
-    }, "Login"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("form", {
+      id: "page_header",
+      className: "featured_title"
+    }, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("div", {
+      id: "page_body"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("form", {
       onSubmit: function onSubmit(event) {
         event.preventDefault();
         submitStep(step);
@@ -8442,135 +8510,9 @@ function Login() {
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("button", {
       type: "submit",
       className: "btn btn-primary"
-    }, "Submit")));
+    }, "Submit"))));
   }
 }
-
-/***/ }),
-
-/***/ "./client/views/todos.js":
-/*!*******************************!*\
-  !*** ./client/views/todos.js ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Todos)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _components_todo_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/todo.js */ "./client/components/todo.js");
-/* harmony import */ var _utilities_request_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utilities/request.js */ "./client/utilities/request.js");
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-/*
- * doest-react
- *
- * todos.js
- *
- * Copyright (c) 2021 ForgeRock. All rights reserved.
- * This software may be modified and distributed under the terms
- * of the MIT license. See the LICENSE file for details.
- */
-
-
-
-/**
- * @function Todos - React view component for retrieving and displaying todos
- * @returns {Object} - React JSX view
- */
-
-function Todos() {
-  /**
-   * Use local, component state for todos. Though, this could be moved to
-   * the global state if that's prefered over doing API calls in React views
-   */
-  var [todos, setTodos] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
-  var textInput = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-  var Todos = !todos.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Loading todos ...") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
-    className: "list-group list-group-flush mb-5"
-  }, todos.map(function (todo) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_todo_js__WEBPACK_IMPORTED_MODULE_1__.default, {
-      key: todo.id,
-      todo: todo
-    });
-  }));
-  /**
-   * Since we are making an API call, which is a side-effect,
-   * we will wrap this in a useEffect, which will re-render the
-   * view once the API request returns.
-   */
-
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    function getTodos() {
-      return _getTodos.apply(this, arguments);
-    }
-
-    function _getTodos() {
-      _getTodos = _asyncToGenerator(function* () {
-        // Request the todos from our resource API
-        var todos = yield (0,_utilities_request_js__WEBPACK_IMPORTED_MODULE_2__.default)('todos', 'GET');
-        setTodos(todos);
-      });
-      return _getTodos.apply(this, arguments);
-    }
-
-    if (!todos.length) {
-      getTodos();
-    }
-  }, []);
-
-  function createTodo(_x) {
-    return _createTodo.apply(this, arguments);
-  }
-
-  function _createTodo() {
-    _createTodo = _asyncToGenerator(function* (e) {
-      e.preventDefault();
-      var title = e.target.elements[0].value;
-      var newTodo = yield (0,_utilities_request_js__WEBPACK_IMPORTED_MODULE_2__.default)('todos', 'POST', {
-        title
-      });
-      setTodos([...todos, newTodo]);
-      textInput.current.value = '';
-      return;
-    });
-    return _createTodo.apply(this, arguments);
-  }
-
-  ;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
-    className: "mt-4 mb-3"
-  }, "Your Todos"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
-    className: "mb-3",
-    action: "https://api.doest.local:8443/todos",
-    method: "POST",
-    onSubmit: createTodo
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "form-floating todos-input-new"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-    id: "newTodo",
-    type: "text",
-    className: "form-control",
-    placeholder: "What needs doing?",
-    ref: textInput
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
-    htmlFor: "newTodo"
-  }, "What needs doing?"))), Todos);
-}
-
-/***/ }),
-
-/***/ "./node_modules/mini-css-extract-plugin/dist/loader.js??ruleSet[1].rules[1].use[1]!./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./node_modules/sass-loader/dist/cjs.js!./client/styles/index.scss":
-/*!***********************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ruleSet[1].rules[1].use[1]!./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./node_modules/sass-loader/dist/cjs.js!./client/styles/index.scss ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************/
-/***/ (() => {
-
-// extracted by mini-css-extract-plugin
 
 /***/ }),
 
@@ -9088,7 +9030,7 @@ pathToRegexp_1.tokensToRegExp = tokensToRegExp_1;
    * Module dependencies.
    */
 
-  
+
 
   /**
    * Short-cuts for global-object checks
@@ -35735,7 +35677,7 @@ function injectIntoDevTools(devToolsConfig) {
     scheduleRoot:  scheduleRoot ,
     setRefreshHandler:  setRefreshHandler ,
     // Enables DevTools to append owner stacks to error messages in DEV mode.
-    getCurrentFiber:  getCurrentFiberForDevTools 
+    getCurrentFiber:  getCurrentFiberForDevTools
   });
 }
 
@@ -38580,6 +38522,16 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/sass-loader/dist/cjs.js!./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./client/styles/index.scss":
+/*!*********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/sass-loader/dist/cjs.js!./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./client/styles/index.scss ***!
+  \*********************************************************************************************************************************************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
 /***/ "./node_modules/scheduler/cjs/scheduler-tracing.development.js":
 /*!*********************************************************************!*\
   !*** ./node_modules/scheduler/cjs/scheduler-tracing.development.js ***!
@@ -39640,21 +39592,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ruleSet_1_rules_1_use_1_node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_3_node_modules_sass_loader_dist_cjs_js_index_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../node_modules/mini-css-extract-plugin/dist/loader.js??ruleSet[1].rules[1].use[1]!../../node_modules/css-loader/dist/cjs.js!../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!../../node_modules/sass-loader/dist/cjs.js!./index.scss */ "./node_modules/mini-css-extract-plugin/dist/loader.js??ruleSet[1].rules[1].use[1]!./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./node_modules/sass-loader/dist/cjs.js!./client/styles/index.scss");
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ruleSet_1_rules_1_use_1_node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_3_node_modules_sass_loader_dist_cjs_js_index_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ruleSet_1_rules_1_use_1_node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_3_node_modules_sass_loader_dist_cjs_js_index_scss__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_sass_loader_dist_cjs_js_node_modules_mini_css_extract_plugin_dist_loader_js_node_modules_css_loader_dist_cjs_js_index_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../node_modules/sass-loader/dist/cjs.js!../../node_modules/mini-css-extract-plugin/dist/loader.js!../../node_modules/css-loader/dist/cjs.js!./index.scss */ "./node_modules/sass-loader/dist/cjs.js!./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./client/styles/index.scss");
+/* harmony import */ var _node_modules_sass_loader_dist_cjs_js_node_modules_mini_css_extract_plugin_dist_loader_js_node_modules_css_loader_dist_cjs_js_index_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_sass_loader_dist_cjs_js_node_modules_mini_css_extract_plugin_dist_loader_js_node_modules_css_loader_dist_cjs_js_index_scss__WEBPACK_IMPORTED_MODULE_1__);
 
-            
+
 
 var options = {};
 
 options.insert = "head";
 options.singleton = false;
 
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()((_node_modules_mini_css_extract_plugin_dist_loader_js_ruleSet_1_rules_1_use_1_node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_3_node_modules_sass_loader_dist_cjs_js_index_scss__WEBPACK_IMPORTED_MODULE_1___default()), options);
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()((_node_modules_sass_loader_dist_cjs_js_node_modules_mini_css_extract_plugin_dist_loader_js_node_modules_css_loader_dist_cjs_js_index_scss__WEBPACK_IMPORTED_MODULE_1___default()), options);
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((_node_modules_mini_css_extract_plugin_dist_loader_js_ruleSet_1_rules_1_use_1_node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_3_node_modules_sass_loader_dist_cjs_js_index_scss__WEBPACK_IMPORTED_MODULE_1___default().locals) || {});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((_node_modules_sass_loader_dist_cjs_js_node_modules_mini_css_extract_plugin_dist_loader_js_node_modules_css_loader_dist_cjs_js_index_scss__WEBPACK_IMPORTED_MODULE_1___default().locals) || {});
 
 /***/ }),
 
@@ -39941,7 +39893,7 @@ module.exports = function (list, options) {
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
-/******/ 	
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
@@ -39955,14 +39907,14 @@ module.exports = function (list, options) {
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
-/******/ 	
+/******/
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/ 	
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/ 	
+/******/
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
@@ -39975,7 +39927,7 @@ module.exports = function (list, options) {
 /******/ 			return getter;
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -39987,12 +39939,12 @@ module.exports = function (list, options) {
 /******/ 			}
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -40003,7 +39955,7 @@ module.exports = function (list, options) {
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
@@ -40077,4 +40029,4 @@ react_dom__WEBPACK_IMPORTED_MODULE_2__.render( /*#__PURE__*/react__WEBPACK_IMPOR
 
 /******/ })()
 ;
-//# sourceMappingURL=app.js.map
+//# sourceMappingURL=app.bundle.js.map

@@ -8,21 +8,23 @@
  * of the MIT license. See the LICENSE file for details.
  */
 
+import bodyParser from 'body-parser';
 import cors from 'cors';
-import express from 'express';
 import cookieParser from 'cookie-parser';
+import express from 'express';
 import { createServer } from 'https';
 import { env } from 'process';
 
-import { key, cert } from './server.certs.mjs';
-import routes from './server.routes.mjs';
+import { key, cert } from './certs.mjs';
+import todoRoutes from './todos.routes.mjs';
+import authRoutes from './auth.routes.mjs';
 
 /**
  * Create and configure Express
  */
 const app = express();
 app.use(express.json());
-app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(
   cors({
@@ -44,7 +46,8 @@ app.use((req, res, next) => {
 /**
  * Initialize routes
  */
-routes(app);
+todoRoutes(app);
+authRoutes(app);
 
 /**
  * Ignore self-signed cert warning

@@ -13,7 +13,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import App from './app.js';
-import { AM_URL, APP_URL, REALM_PATH } from './constants.js';
+import { AM_URL, APP_URL, PATHS, REALM_PATH } from './constants.js';
 import { AppContext, useStateMgmt } from './state.js';
 
 import './styles/index.scss';
@@ -25,13 +25,15 @@ console.log('Set AM configuration');
  */
 Config.set({
   clientId: 'WebOAuthClient',
+  realmPath: REALM_PATH,
   redirectUri: `${APP_URL}/callback`,
   scope: 'openid profile email',
   serverConfig: {
     baseUrl: AM_URL,
-    timeout: '5000',
+    paths: PATHS,
+    timeout: '50000',
   },
-  realmPath: REALM_PATH,
+  support: 'legacy',
   tree: 'UsernamePassword',
 });
 
